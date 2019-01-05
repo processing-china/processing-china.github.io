@@ -31,7 +31,7 @@ p {
 hr {
 border: 2px dotted;
 border-style: none none dotted;
-color: #fff
+color: #000
 }
 
 .callout {
@@ -136,7 +136,7 @@ header {
 }
 
 header h1{
-	font-size:2em;
+	font-size:2.5em;
 	color:#5A00B1;
 	width:80%;
 	display:flex;
@@ -154,7 +154,7 @@ header h1{
 
 .byline {
 	font-size: 2.5rem;
-	text-shadow: 0.5px 0.5px rgb(190, 143, 245);
+/*	text-shadow: 0.5px 0.5px rgb(190, 143, 245);*/
 	width:80%;
 }
 
@@ -179,7 +179,7 @@ header h1{
 
 a {
 	text-shadow: none;
-	color: #FFBFEA;
+	color: #5A00B1;
 }
 
 .open-call__submit:hover {
