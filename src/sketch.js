@@ -1,62 +1,34 @@
-var num = 5;
-var mountains = [];
+var t;
 
 function setup() {
-	createCanvas(windowWidth, windowHeight);
-	shanShui();
+	createCanvas(windowWidth,windowHeight);
+	background(255);
+	// stroke(0, 15);
+
+	stroke('rgba(45,0,88,0.25)');
+	strokeWeight(0.2)
+
+
+  noFill();
+  t = 0;
 }
 
 function draw() {
+  var x2 =  mouseX;
+  var x1 = width * noise(t + 20);
+  var x3 = width * noise(t + 30);
+  var x4 = width * noise(t + 40);
+
+  var y2 = mouseY;
+  var y1 = height * noise(t + 50);
+  var y3 = height * noise(t + 60);
+  var y4 = height * noise(t + 70);
+
+  bezier(x1, y1, x2, y2, x3, y3, x4, y4);
+
+  t += 0.005;
+
+  if (frameCount % 1000 == 0) {
 	background(255);
-	noStroke();
-	ellipse(100, 100, 80, 80); //sun
-
-	for (var i = 0; i < mountains.length; i++) {
-		mountains[i].show();
-	}
-}
-
-function shanShui() {
-	for (var i = 0; i < num; i++) {
-		mountains.push(new curveLine(i));
-	 }
-}
-
-function curveLine(_index) {
-	var index = _index;
-	var screen = 2000;
-	var screenHeight = 800;
-	var base = random (screen/4, screen/2); 
-	var start = random (-screen/2, screen/2); 
-
-	this.show = function (){
-			var ink = 20;
-
-			var c = color(0, 0, 0,ink);
-			fill(c);
-    		stroke(c);
-
-			var xoffset = map(mouseX, 0,screen, -100,100) * (index+1) ;
-
-				 for (var x = start; x < base + start; x++) {
-				 	var mapLoc = map(x, start, base+start, 0, 1);
-				 	var edgePercent = .2;
-
-				 	if(mapLoc< edgePercent){
-				 		stroke(0,0,0,(mapLoc*(1/edgePercent))*ink);
-				 	}else if(mapLoc> abs(1-edgePercent)){
-				 		var inverseLoc = abs(1-mapLoc);
-				 		stroke(0,0,0,(inverseLoc*1/edgePercent)*ink);
-				 	}
-
-					var nx = map(x, 0, screen, 0, 10);
-					var y = screenHeight * (noise(nx+index*10)*.7);
-					var xPos = x+ xoffset
-
-					line (xPos, y, xPos, y+(screenHeight-y)/2);
-					line (xPos, y, xPos, y+(screenHeight-y)/4);
-					line (xPos, y, xPos, y+(screenHeight-y)/8);
-					line (xPos, y, xPos, y+(screenHeight-y)/16);	
-				 }
-	}
+  }
 }

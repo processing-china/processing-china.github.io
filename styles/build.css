@@ -9,7 +9,11 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 h1 {
-	font-size: 2.5em;
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1em;
 }
 
 ul {
@@ -17,7 +21,19 @@ ul {
 }
 
 li {
+	font-family: 'Roboto', sans-serif;
 	list-style: none;
+	padding-bottom: 10px; 
+
+}
+
+.info__key {
+	font-weight: bold;
+	/*color:#5A00B1;*/
+}
+
+.info li {
+	font-size: 1.2em;
 }
 
 .biginfo {
@@ -37,6 +53,16 @@ color: #000
 .callout {
 		text-align: center;
 }
+
+canvas {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:-1;
+}
+
 
 body {
 	padding: 30px 2px;
@@ -97,17 +123,13 @@ main, header, footer {
 	color:#5A00B1;
 } */
 
-.info__key {
-	font-weight: bold;
-}
 
-.info li {
-	font-size: 1.2em;
-}
+
+
 
 header #logo{
-	width:60px;
-	height:60px;
+	width:80px;
+	height:80px;
 }
 
 header {
@@ -136,7 +158,7 @@ header {
 }
 
 header h1{
-	font-size:2.5em;
+	font-size:2.2em;
 	color:#5A00B1;
 	width:80%;
 	display:flex;
@@ -152,11 +174,11 @@ header h1{
 	align-items:center;
 }
 
-.byline {
+/*.byline {
 	font-size: 2.5rem;
-/*	text-shadow: 0.5px 0.5px rgb(190, 143, 245);*/
+	text-shadow: 0.5px 0.5px rgb(190, 143, 245);
 	width:80%;
-}
+}*/
 
 .open-call {
 	padding-bottom: 1.17rem;
