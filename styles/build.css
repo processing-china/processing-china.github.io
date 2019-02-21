@@ -124,7 +124,10 @@ main, header, footer {
 } */
 
 
-
+main #schedule{
+	width:600px;
+	/*height:80px;*/
+}
 
 
 header #logo{
